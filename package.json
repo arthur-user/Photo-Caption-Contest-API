@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui": "^5.17.14",
+    "swagger-ui-dist": "^5.17.14",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "name": "caption-contest-project",
+  "version": "1.0.0",
+  "description": "express.js",
+  "main": "express.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthur-user/Photo-Caption-Contest-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arthur-user/Photo-Caption-Contest-API/issues"
+  },
+  "homepage": "https://github.com/arthur-user/Photo-Caption-Contest-API#readme",
+  "keywords": []
+}
