@@ -833,3 +833,50 @@ This way, dependencies are automatically installed every time a new environment 
 
 6. Package Manager Selection
 You can also use package-lock.json (for npm) or yarn.lock (for yarn) files to ensure consistency across installations. When someone runs npm install or yarn install, it will install the exact versions of dependencies defined in these lock files, ensuring all team members are using the same versions of modules.
+
+
+
+
+
+
+
+
+
+
+In the `models` folder, the convention in Sequelize (and most ORM-based applications) is to use **singular** names for model files and model definitions. So, the file should be named `user.js`, and the model should be defined as `User`.  
+
+### Example: `models/user.js`
+```javascript
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
+  }, {});
+
+  return User;
+};
+```
+
+### Why use singular?
+- **Sequelize follows singular naming conventions** for models (e.g., `User` instead of `Users`).
+- **The corresponding database table is usually pluralized** (e.g., `Users` by default, unless explicitly set otherwise).
+- **Consistency** with other models like `Photo`, `Caption`, etc.
+
+However, if your project already follows a plural naming convention for models, it's best to stay consistent throughout. Just remember to adjust the table name in the model definition to match the plural form.

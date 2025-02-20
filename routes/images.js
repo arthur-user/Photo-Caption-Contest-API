@@ -138,6 +138,6 @@ router.put('/:id', imageService.update);
  *        "404":
  *          description: Requested image not found
  */
-router.delete('/:id', imageService.remove);
+router.delete('/:id', imageService.delete);
 
 module.exports = router;

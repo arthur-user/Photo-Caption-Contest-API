@@ -65,11 +65,11 @@ router.get('/:id', userService.getById);
  *          application/json:
  *            schema:
  *              $ref: '#/components/schemas/User'
- *       responses:
- *         "201":
- *           description: Returns the new user
- *             schema:
- *               $ref: '#/components/schemas/User'
+ *      responses:
+ *        "201":
+ *          description: Returns the new user
+ *          schema:
+ *            $ref: '#/components/schemas/User'
  */
 router.post('/', userService.create);
 

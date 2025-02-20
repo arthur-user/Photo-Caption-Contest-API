@@ -9,7 +9,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('./config/config.json')[env];
 
 const userRouter = require('./routes/users');
-const photoRouter = require('./routes/photos');
+const photoRouter = require('./routes/images');
 const captionRouter = require('./routes/captions');
 const indexRouter = require('./routes/index');
 
