@@ -7,19 +7,19 @@ const userService = require('../services/user-service');
 /**
  * @swagger
  * /users:
- *   get:
- *    summary: Get all users
- *    produces:
- *      - application/json
- *    tags:
- *     - Users
- *    responses:
- *      "200":
- *      description: Returns a list of all users from the database
- *      schema:
- *        type: array
- *        items:
- *          $ref: '#/components/schemas/User'
+ *    get:
+ *      summary: Get all users
+ *      produces:
+ *        - application/json
+ *      tags:
+ *        - Users
+ *      responses:
+ *        "200":
+ *          description: Returns a list of all users from the database
+ *          schema:
+ *            type: array
+ *            items:
+ *              $ref: '#/components/schemas/User'
  */
 router.get('/', userService.list);
 
@@ -76,28 +76,28 @@ router.post('/', userService.create);
 /** 
  * @swagger
  * /users/login:
- *     post:
- *       summary: Login in order to retrieve the user's access token
- *       produces:
- *         - application/json
- *       tags:
- *         - Users
- *       requestBody:
- *         description: User data for a new user
- *         required: true
- *         content:
- *           application/json:
- *             schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *                 example: example@test.com
- *               password:
- *                 type: string
- *                 example: passw1ord  
- *       responses:
- *         "200":
+ *    post:
+ *      summary: Login in order to retrieve the user's access token
+ *      produces:
+ *        - application/json
+ *      tags:
+ *        - Users
+ *      requestBody:
+ *        description: User data for a new user
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                email:
+ *                  type: string
+ *                  example: example@test.com
+ *                password:
+ *                  type: string
+ *                  example: passw1ord  
+ *      responses:
+ *        "200":
  *           description: Logs in specific user and returns an access token
  *           schema:
  *             type: object
@@ -111,7 +111,7 @@ router.post('/', userService.create);
  *               token:
  *                 type: string
  *                 description: auth token which is required for authenticated actions
- *         "401":
+ *        "401":
  *           description: Provided username or password is incorrect
  * 
  */      

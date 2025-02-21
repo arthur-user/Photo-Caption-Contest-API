@@ -880,3 +880,42 @@ module.exports = (sequelize, DataTypes) => {
 - **Consistency** with other models like `Photo`, `Caption`, etc.
 
 However, if your project already follows a plural naming convention for models, it's best to stay consistent throughout. Just remember to adjust the table name in the model definition to match the plural form.
+
+
+
+
+
+
+
+
+
+
+
+Since you're using swagger-jsdoc, you must first generate your OpenAPI JSON/YAML and then paste that into Swagger Editor.
+
+✅ Step 1: Generate Swagger JSON/YAML from JSDoc
+Run the following command in your project directory:
+
+
+npx swagger-jsdoc -d swaggerDef.js -o swagger.json
+(Replace swaggerDef.js with your actual Swagger definition file if needed.)
+
+✅ Step 2: Validate Swagger JSON in Swagger Editor
+Open the generated swagger.json or swagger.yaml.
+Copy the content.
+Paste it into Swagger Editor.
+Fix any errors shown.
+
+
+Common Issues in JSDoc That Cause Errors
+Misaligned Indentation
+
+Ensure responses keys ("200", "401") are properly indented.
+No YAML Headers in Swagger JSDoc
+
+Unlike OpenAPI YAML, JSDoc does not use --- (document separators).
+Make sure your comments start with /** and follow Swagger JSDoc format.
+Produces/Consumes Deprecated in OpenAPI 3+
+
+Remove produces (Use content instead).
+

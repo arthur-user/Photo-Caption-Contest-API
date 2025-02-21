@@ -61,7 +61,7 @@ router.post('/', authorization, captionService.add);
 
 /**
  * @swagger
- * /captions/{id:
+ * /captions/{id}:
  *     put:
  *       summary: Update caption comment
  *       produces:
