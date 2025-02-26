@@ -9,29 +9,31 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('./config/config.json')[env];
 
 const userRouter = require('./routes/users');
-const photoRouter = require('./routes/images');
+const photoRouter = require('./routes/photos');
 const captionRouter = require('./routes/captions');
 const indexRouter = require('./routes/index');
 
 const app = express();
 
+// view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(helmet());
-app.use(logger('dev'));
-app.use(express.json());
+app.use(helmet()); // security middleware
+app.use(logger('dev')); // logging middleware
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: false}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser()); 
+app.use(express.static(path.join(__dirname, 'public'))); // serves static files necessary for Render
 
-app.use('/', indexRouter);
+app.use('/', indexRouter); // routes
 app.use('/users', userRouter);
 app.use('/photos', photoRouter);
 app.use('/captions', captionRouter);
 
 // catches 404 error and sends it to the error handler
-app.use(function(req, res, next) {
+app.use(function(req, res, next) { 
     next(createError(404));
 })
 

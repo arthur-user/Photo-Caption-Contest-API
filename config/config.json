@@ -1,24 +1,24 @@
 {
   "development": {
-    "username": "roots",
-    "password": "root",
-    "database": "postgres",
+    "username": "root",
+    "password": "p@ssw0rd!",
+    "database": "node_sequelize",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "privateKey": "privateKey"
   },
   "test": {
-    "username": "roots",
-    "password": "root",
-    "database": "postgres",
+    "username": "root",
+    "password": "p@ssw0rd!",
+    "database": "node_sequelize",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "privateKey": "privateKey"
   },
   "production": {
-    "username": "roots",
-    "password": "root",
-    "database": "postgres",
+    "username": "root",
+    "password": "p@ssw0rd!",
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "privateKey": "privateKey"

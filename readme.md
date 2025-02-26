@@ -54,7 +54,7 @@ Swagger tests:
 - Create a user using `POST /users`
 - Login as a new user `POST /users/login`
 - Authorizing Swagger requests:
- - Copy the token that's returned from login
+   - Copy the token that's returned from login
    - Click the Authorize button located at the top
    - Paste the auth token
    - Click Login

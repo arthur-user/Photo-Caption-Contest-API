@@ -1,7 +1,3 @@
 <h1><%= message %></h1>
 <h2><%= error.status %></h2>
-<% if (process.env.NODE_ENV === 'development') { %>
-    <pre><%= error.stack %></pre>
-<% } else { %>
-    <p>An error occurred.</p>
-<% } %>
+<pre><%= error.stack %></pre>

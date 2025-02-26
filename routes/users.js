@@ -38,7 +38,7 @@ router.get('/', userService.list);
  *          in: path
  *          type: integer
  *          required: true
- *          example: 4
+ *          example: 1
  *      responses:
  *        "200":
  *          description: Returns a single user and their captions
@@ -92,10 +92,10 @@ router.post('/', userService.create);
  *              properties:
  *                email:
  *                  type: string
- *                  example: example@test.com
+ *                  example: testuser@test.com
  *                password:
  *                  type: string
- *                  example: passw1ord  
+ *                  example: p@ssw0rd
  *      responses:
  *        "200":
  *           description: Logs in specific user and returns an access token
@@ -134,7 +134,7 @@ router.post('/login', userService.login);
  *           in: path
  *           type: integer
  *           required: true
- *           example: 4
+ *           example: 1
  *       requestBody:
  *         description: Updated specified user data
  *         required: true
@@ -145,10 +145,10 @@ router.post('/login', userService.login);
  *               properties:
  *                 name:
  *                   type: string
- *                   example: exampleuser@test.com
+ *                   example: testuser@test.com
  *                 password:
  *                   type: string
- *                   example: passw1ord
+ *                   example: p@ssw0rd
  *       responses:
  *         "201":
  *           description: returns the updated user

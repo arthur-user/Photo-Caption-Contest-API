@@ -20,17 +20,15 @@ const jwt = require('jsonwebtoken');
  *          email:
  *            type: string
  *            format: email
- *            description: Unique email for the user
+ *            description: Email for the user, must be unique
  *          password:
  *            type: string
- *            description: Password must be between 8 and 20 characters
+ *            description: Must be between 8 and 20 characters
  *        example:
- *          name: Test User
- *          email: testuser@test.com
- *          password: passw0rd
+ *           name: Test User
+ *           email: testuser@test.com
+ *           password: p@ssw0rd
  */
-
-
 const {
   Model
 } = require('sequelize');
@@ -40,39 +38,40 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Caption, {
         foreignKey: 'user_id',
         as: 'captions'
-      });
+      })
     }
-  
-
+    
     generateToken() {
       return jwt.sign({
-        id: this.id,
-        email: this.email
+          id: this.id,
+          email: this.email
         },
-        config.privateKey, {expiresIn: '1h'}); //expires in 1h
-      }  
+        config.privateKey);
     }
-
+  }
 
   User.init({
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      required: true
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+      isUnique: true,
       isEmail: true
     },
     password: {
-     type: DataTypes.STRING,
-      allowNull: false, //ensure password is required in Sequelize
-      len: [8, 20]
-  }
+      type: DataTypes.STRING,
+      required: true,
+      allowNull: false,
+      len: [8,20]
+    }
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'User'
   });
+
   return User;
 };

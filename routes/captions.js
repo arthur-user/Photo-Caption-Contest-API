@@ -19,15 +19,15 @@ const captionService = require('../services/caption-service');
  *          in: path
  *          type: integer
  *          required: true
- *          example: 4
+ *          example: 1
  *      responses:
  *        "200":
  *          description: returns caption
- *          scheme:
- *            $ref: '#/components/schemas/Captions'
+ *          schema:
+ *            $ref: '#/components/schemas/Caption'
  *        "404":
  *          description: Requested user not found 
- *  */ 
+ */ 
 router.get('/:id', captionService.getById);
 
 
@@ -49,7 +49,7 @@ router.get('/:id', captionService.getById);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Caption'
- *       response:
+ *       responses:
  *         "201":
  *           description: returns a created caption
  *           schema:
@@ -76,7 +76,7 @@ router.post('/', authorization, captionService.add);
  *           in: path
  *           type: integer
  *           required: true
- *           example: 4
+ *           example: 1
  *       requestBody:
  *         description: Updated comment
  *         required: true
@@ -119,9 +119,9 @@ router.put('/:id', authorization, captionService.update);
  *           in: path
  *           type: integer
  *           required: true
- *           example: 4
+ *           example: 1
  *       responses:
- *         "201":
+ *         "204":
  *           description: caption deleted
  *         "401":
  *           description: User not properly authenticated
