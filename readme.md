@@ -41,6 +41,7 @@ migration scripts using `sequelize db:migrate`
 You are now able to run the project using `DEBUG=myapp:* npm start`
 
 Once running, the API can be accessed at `http://localhost:3000/`
+The project includes static images, which can be accessed through http://localhost:3000/images/<enter_full_file_name.png>
 
 
 ## Testing using Swagger:
