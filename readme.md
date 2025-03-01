@@ -2,6 +2,8 @@
 
 A Node.js API using the Express framework to retrieve and caption images. Users are able to view a list of images and register in order to leave captions on images. The API uses caching, authorization and authentication, and it also persists data.
 
+Render was used to test production deployment.
+
 ## Dependencies
 
 - NodeJS/Express.js
